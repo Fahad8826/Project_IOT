@@ -29,10 +29,13 @@ INSTALLED_APPS = [
     # Third-party apps
     'rest_framework',  # Django REST Framework
     'corsheaders',  # CORS Headers
-
-    # Your Django apps
-    'myapp',  # Replace with your actual app name
+    'myapp',
 ]
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ],
+}
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',  # CORS Middleware (must be at the top)
